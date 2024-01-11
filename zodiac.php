@@ -25,7 +25,7 @@ function Year() {
     //if the submit button is clicked, then the year is set to the year entered in the form
     if (isset($_POST['submit'])) {
     //determine which chinese zodiac year is is based on the year entered in the form
-    
+
 
        $year = $_POST['year'];
     
@@ -40,9 +40,9 @@ function Year() {
 
 //Use this formula to determine which item in the array to choose, given a year 
 
-if (isset($_POST['submit'])) {
-    myFunction();
-}
+// if (isset($_POST['submit'])) {
+//     myFunction();
+// }
 
 
 ?>
