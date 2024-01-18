@@ -1,3 +1,6 @@
+<?php include 'zodiac.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +12,20 @@
 
 
 <body>
-<form action="zodiac.php" method = "post"> birth year</label>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <label for="year">Birth year:</label>
+    <input type="number" name="year" id="year" min="1900" max="2000" required>
+    <input type="submit" value="Find Zodiac">
+    <input type="reset" value="Clear">
+</form>
 
-
-    <input type="number" name="year" id="year" min="1900" max="2000"  required  >
-    <input type='submit' value='zodiac'>
-    <input type='reset' value='clear'>
-    <br>
-  
-    <img src="img/<?php echo $zodiac; ?>.jpg" alt="zodiac" width="200" height="200">
+<?php
+// If the zodiacSign has been set, display the image and name
+if (isset($zodiacSign)) {
+    echo "<p>Your Chinese Zodiac sign is: " . $zodiacSign . "</p>";
+    echo "<img src='" . $zodiacImage . "' alt='" . $zodiacAltText . "' width='200' height='200'>";
+}
+?>
 
 </body>
 </html>

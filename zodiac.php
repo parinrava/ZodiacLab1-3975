@@ -1,12 +1,9 @@
 <?php
 
-//create function to determine zodiac sign
 
-
-// Example PHP Script with Functions Defined at the Top
 
 // Function to add two numbers
-function Year() {
+function  getChineseZodiac($year) {
     $zodiac = array(
         "Rat" => "img/rat.jpg",
         "Ox" => "img/ox.jpg",
@@ -22,19 +19,10 @@ function Year() {
         "Pig" => "img/pig.jpg"
     );
 
-    //if the submit button is clicked, then the year is set to the year entered in the form
-    if (isset($_POST['submit'])) {
-    //determine which chinese zodiac year is is based on the year entered in the form
+    $baseYear = 1900; // Rat
+    $index = ($year - $baseYear) % 12;
 
-
-       $year = $_POST['year'];
-    
-    
-     
-    }
-
-
-    echo $zodiac[$year] ;
+    return $zodiac[$index];
 }
 
 
