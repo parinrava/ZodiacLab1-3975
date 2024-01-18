@@ -3,7 +3,7 @@
 
 
 // Function to add two numbers
-function  getChineseZodiac($year) {
+function getChineseZodiac($year) {
     $zodiac = array(
         "Rat" => "img/rat.jpg",
         "Ox" => "img/ox.jpg",
@@ -19,11 +19,15 @@ function  getChineseZodiac($year) {
         "Pig" => "img/pig.jpg"
     );
 
+    $animals = array_keys($zodiac);
     $baseYear = 1900; // Rat
     $index = ($year - $baseYear) % 12;
+    $animal = $animals[$index];
 
-    return $zodiac[$index];
+    // Return the key-value pair for the zodiac sign
+    return [$animal => $zodiac[$animal]];
 }
+
 
 
 //Use this formula to determine which item in the array to choose, given a year 
