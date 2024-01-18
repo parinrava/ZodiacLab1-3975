@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['year'])) {
     <label for="year">Birth year:</label>
     <input type="number" name="year" id="year" min="1900" max="2025" required>
     <input type="submit" value="Find Zodiac">
-    <input type="reset" value="Clear">
+    <button onclick="window.location.href=window.location.href;return false;">Clear</button>
 </form>
 
 <?php
